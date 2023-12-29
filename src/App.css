@@ -1,0 +1,10 @@
+body {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    background: yellow;
+}
+.mainContent{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,10 +1,18 @@
 import './App.css'
+import GridProductos from './components/GridProductos'
+import Header from './components/Header'
+import SideBar from './components/SideBar'
 
 function App() {
 
   return (
     <>
-      <h1>Baraton</h1>
+      <Header />
+      <main className='mainContent'>
+        <SideBar />
+        <GridProductos />
+
+      </main>
     </>
   )
 }

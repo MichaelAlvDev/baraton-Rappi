@@ -1,0 +1,12 @@
+.sideBar{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(74, 74, 114);
+    min-height: calc(100vh - 100px);
+    width: 20%;
+    max-width: 500px;
+}
+.sideBar h1{
+    color: #fafafa;
+}
