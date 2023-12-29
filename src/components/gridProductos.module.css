@@ -1,5 +1,16 @@
 .productGrid{
 background: #008000;
+flex: 80%;
+padding: 10px;
+margin: 0;
+box-sizing: border-box;
 display: flex;
-width: 80%;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
 }
+@media screen and (max-width: 700px) {
+    .productGrid {
+      flex-direction: column;
+    }
+  }

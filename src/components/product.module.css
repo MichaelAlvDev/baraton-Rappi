@@ -1,0 +1,9 @@
+.productBox{
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    flex: 30%;
+    max-height: 300px;
+    min-height: 200px;
+    background:#fafafa;
+}

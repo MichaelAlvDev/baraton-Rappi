@@ -1,12 +1,18 @@
-.sideBar{
+.sideBar {
     padding: 10px;
-    display: flex;
-    flex-direction: column;
+    box-sizing: border-box;
     background: rgb(74, 74, 114);
-    min-height: calc(100vh - 100px);
-    width: 20%;
-    max-width: 500px;
+    flex: 20%;
+    /* max-width: 500px; */
 }
-.sideBar h1{
+
+.sideBar h1 {
     color: #fafafa;
+}
+
+.show{
+    display: initial;
+}
+.hide{
+    display: none;
 }
