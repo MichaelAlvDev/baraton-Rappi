@@ -3,7 +3,7 @@ import Filter from "./Filter";
 import Menu from "./Menu";
 import styles from "./sideBar.module.css"
 
-const SideBar = ({ showBar }) => {
+const SideBar = ({ showBar }:any) => {
 
   return (
     <aside className={`${styles.sideBar} ${showBar ? null : styles.hide}`}>
