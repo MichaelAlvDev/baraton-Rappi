@@ -4,13 +4,13 @@ const Filter = () => {
     return (
         <div className={stlyes.filterContainer}>
             <button>
-                filter1
+               disponibilidad
             </button>
             <button>
-                filter1
+                cantidad
             </button>
             <button>
-                filter1
+                precio
             </button>
         </div>
     );

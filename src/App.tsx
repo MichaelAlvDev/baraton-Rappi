@@ -5,9 +5,10 @@ import Header from './components/Header'
 import SideBar from './components/SideBar'
 
 function App() {
-  const [showBar, setShow] = useState(true);
+  const [showBar, setShowbar] = useState(true);
   const handleShowBar = () => {
-    setShow(showBar ? false : true);
+    // setShowbar(showBar ? false : true);
+    setShowbar(showbar =>!showbar)
   }
   return (
     <>
@@ -19,7 +20,6 @@ function App() {
           showBar={showBar}
         />
         <GridProductos />
-
       </main>
     </>
   )

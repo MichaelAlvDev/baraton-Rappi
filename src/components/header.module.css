@@ -1,5 +1,5 @@
-.headerContent{
-    background: red;
+.headerContent {
+    background: rgb(64 64 64);
     width: 100%;
     display: flex;
     color: #fafafa;
@@ -11,6 +11,20 @@
     height: 80px;
 }
 
-.imgLogo{
+.imgLogo {
     max-width: 50px;
+}
+
+.headerContent button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #a09d9d;
+    font-size: 1.5rem;
+    transition: 600ms;
+}
+
+.headerContent button:hover {
+    color: #fafafa;
+    transition: 600ms;
 }

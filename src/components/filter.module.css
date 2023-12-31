@@ -1,3 +1,12 @@
 .filterContainer{
     display: flex;
 }
+.filterContainer button{
+    outline: none;
+    background: none;
+    margin: 5px;
+    border: 1px solid #000;
+    color: #fafafa;
+    cursor: pointer;
+    text-transform:uppercase ;
+}

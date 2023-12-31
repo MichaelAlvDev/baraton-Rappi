@@ -3,13 +3,14 @@ import Filter from "./Filter";
 import Menu from "./Menu";
 import styles from "./sideBar.module.css"
 
-const SideBar = ({ showBar }:any) => {
-
+const SideBar = (props: any) => {
   return (
-    <aside className={`${styles.sideBar} ${showBar ? null : styles.hide}`}>
+    <aside className={`${styles.sideBar} ${props.showBar ? null : styles.hide}`}>
+      <div><h1>Filtros</h1> </div>
       <Filter />
-      <Menu />
       <div><h1>Menu</h1> </div>
+      <Menu />
+
     </aside>
   );
 };
