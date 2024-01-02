@@ -2,7 +2,6 @@ import styles from "./product.module.css"
 
 
 const Product = (props:any) => {
-  console.log(props)
     return (
         <div className={styles.productBox}> 
            <h1>

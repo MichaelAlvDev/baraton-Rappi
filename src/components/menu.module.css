@@ -11,7 +11,7 @@
 .menu li {
     padding: 10px 10px;
     color: #fafafa;
-
+    cursor: pointer;
 }
 
 .menu li a {

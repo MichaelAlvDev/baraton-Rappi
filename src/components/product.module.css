@@ -2,8 +2,9 @@
     margin: 5px;
     padding: 10px;
     box-sizing: border-box;
-    flex: 20%;
+    flex: 15%;
     max-height: 300px;
     min-height: 200px;
-    background:#fafafa;
+    background: #fafafa;
+    min-width: 230px;
 }
