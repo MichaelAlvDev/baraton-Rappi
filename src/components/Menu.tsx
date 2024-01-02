@@ -1,32 +1,28 @@
+import { MouseEvent } from 'react';
 import styles from './menu.module.css';
-import menuData from "../../public/categories.json"
+import menuData from "../../public/categories.json";
 
-function handleClick (e){
-    toggle_list(e)
+function handleClick(e: MouseEvent<HTMLAnchorElement>) {
+    toggle_list(e);
     // return e;
 }
-function toggle_list(e:any) {
-    // e.preventDefault();
-    // let listTarget = e.target.parentElement;
-    // console.log(listTarget.classList)
-    // if (listTarget.classList.contains("open")) {
-    //     listTarget.classList.replace("open", "closed");
-    // } else if (listTarget.classList.contains("closed")) {
-    //     listTarget.classList.replace("closed", "open");
-    // }
-    // // return e;
+
+function toggle_list(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    const listTarget = e.target.parentElement;
+    const listTarget = e.currentTarget.parentElement as HTMLLIElement;
+    const listTargetChilds = listTarget.children[1].children[0] as HTMLElement;
 
     if (listTarget.classList.contains(styles.open)) {
         listTarget.classList.replace(styles.open, styles.closed);
+        listTargetChilds.classList.replace(styles.open, styles.closed);
     } else if (listTarget.classList.contains(styles.closed)) {
         listTarget.classList.replace(styles.closed, styles.open);
     } else {
         listTarget.classList.add(styles.open);
     }
 }
-function renderMenu(data:any) {
+
+function renderMenu(data: any[]) {
     return data.map(item => (
         <li
             key={item.id}
@@ -35,17 +31,17 @@ function renderMenu(data:any) {
             <a
                 href="/#"
                 rel="noopener noreferrer"
-                onClick={(e) => handleClick(e)}
-                >
+                onClick={(e: MouseEvent<HTMLAnchorElement>) => handleClick(e)}
+            >
                 {item.name}
             </a>
-            {item.sublevels && ( // Verifica si hay subcategorías
+            {item.sublevels && (
                 <ul>
                     {renderMenu(item.sublevels)}
                 </ul>
             )}
         </li>
-    ))
+    ));
 }
 
 const Menu = () => {
