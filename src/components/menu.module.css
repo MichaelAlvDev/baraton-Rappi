@@ -13,7 +13,9 @@
     color: #fafafa;
     cursor: pointer;
 }
-
+.closed.menuLi ul{
+display: none;
+}
 .menu li a {
     text-decoration: none;
     color: #fafafa;
