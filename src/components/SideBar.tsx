@@ -8,8 +8,10 @@ const SideBar = (props: any) => {
     <aside className={`${styles.sideBar} ${props.showBar ? null : styles.hide}`}>
       <div><h1>Filtros</h1> </div>
       <Filter />
-      <div><h1>Menu</h1> </div>
-      <Menu />
+      <div><h1>Categorias</h1> </div>
+      <Menu 
+        fnSortByMenu={props.fnSortByMenu}
+      />
 
     </aside>
   );

@@ -6,5 +6,6 @@
     max-height: 300px;
     min-height: 200px;
     background: #fafafa;
-    min-width: 230px;
+    max-width: 300px;
+
 }

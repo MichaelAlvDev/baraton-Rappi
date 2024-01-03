@@ -2,8 +2,7 @@ import Product from './Product';
 import styles from './gridProductos.module.css';
 import productos from "../../public/products.json"
 
-const GridProductos = () => {
-
+const GridProductos = (props: any) => {
     const Productos: any = productos.products.map((producto: any) => ({
         quantity: producto.quantity,
         price: producto.price,
@@ -12,9 +11,17 @@ const GridProductos = () => {
         name: producto.name,
         id: producto.id,
     }));
+    const filterProducs = Productos?.filter((producto: any) => {
+        // Filtrar según el sublevel_id deseado
+        const sublevelToFilter = props.toSortMenu; 
+        return producto.sublevel_id === sublevelToFilter;
+    });
+    console.log(filterProducs)
     return (
+
         <div className={styles.productGrid}>
-            {Productos?.map((product: any) => (
+            {/* el map recibe los productos filtrados  */}
+            {filterProducs?.map((product: any) => (
                 <Product
                     key={product.id}
                     productQuantity={product.quantity}

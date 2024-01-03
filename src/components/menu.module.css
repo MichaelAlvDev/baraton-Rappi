@@ -10,15 +10,19 @@
 
 .menu li {
     padding: 10px 10px;
-    color: #fafafa;
+    color: #e2e2e2;
     cursor: pointer;
-}
-.closed.menuLi ul{
-display: none;
 }
 .menu li a {
     text-decoration: none;
-    color: #fafafa;
+    color: #e2e2e2;
     width: 100%;
+    padding: 10px 15px;
 
+}
+.open.menuLi >a{
+    color: #ffffff;
+}
+.closed.menuLi ul{
+display: none;
 }

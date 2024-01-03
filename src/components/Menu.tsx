@@ -2,19 +2,15 @@ import { MouseEvent } from 'react';
 import styles from './menu.module.css';
 import menuData from "../../public/categories.json";
 
-function handleClick(e: MouseEvent<HTMLAnchorElement>) {
-    toggle_list(e);
-    // return e;
-}
-
-function toggle_list(e: MouseEvent<HTMLAnchorElement>) {
+const Menu = (props:any) => { //abre componente
+   
+   function toggle_list(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
     const listTarget = e.currentTarget.parentElement as HTMLLIElement;
-    const listTargetChilds = listTarget.children[1].children[0] as HTMLElement;
-
     if (listTarget.classList.contains(styles.open)) {
         listTarget.classList.replace(styles.open, styles.closed);
-        listTargetChilds.classList.replace(styles.open, styles.closed);
+        // listTargetChilds? listTargetChilds.classList.replace(styles.open, styles.closed):null
+        // en la linea anterior trate de ocultar todos los submenus al cerrar un padre pero me da un error el el ultimo hijo "undefined"
     } else if (listTarget.classList.contains(styles.closed)) {
         listTarget.classList.replace(styles.closed, styles.open);
     } else {
@@ -25,6 +21,7 @@ function toggle_list(e: MouseEvent<HTMLAnchorElement>) {
 function renderMenu(data: any[]) {
     return data.map(item => (
         <li
+            value={item.id}
             key={item.id}
             className={`${styles.menuLi} ${styles.closed}`}
         >
@@ -42,9 +39,10 @@ function renderMenu(data: any[]) {
             )}
         </li>
     ));
+} function handleClick(e: MouseEvent<HTMLAnchorElement>) {
+    toggle_list(e);
+    props.fnSortByMenu(e);
 }
-
-const Menu = () => {
     return (
         <div className={styles.menuContainer}>
             <ul className={`${styles.menu}`}>
