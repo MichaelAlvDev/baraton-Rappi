@@ -7,14 +7,14 @@ import SideBar from './components/SideBar'
 function App() {
   const [showBar, setShowbar] = useState(true); //state para mostrar la SideBAr
   const [toSortMenu,setToSortMenu] = useState<number>(1) //state para filtrar productos egun el nivel seleccionado del menu categorias
-  const handleShowBar = () => { //Maneja el estado para mostrar el sidebar desde el menu
+  const handleShowBar = ():void => { //Maneja el estado para mostrar el sidebar desde el menu
     setShowbar(showbar => !showbar)
   }
-  function sortByMenu(e: MouseEvent<HTMLAnchorElement>) {
+  function sortByMenu(e: MouseEvent<HTMLAnchorElement>):void {
     e.preventDefault();
     const listTarget = e.currentTarget.parentElement as HTMLLIElement;
     setToSortMenu(listTarget.value)
-    
+
   };
 
   return (

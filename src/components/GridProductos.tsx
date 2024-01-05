@@ -13,13 +13,20 @@ const GridProductos = (props: any) => {
     }));
     const filterProducs = Productos?.filter((producto: any) => {
         // Filtrar según el sublevel_id deseado
-        const sublevelToFilter = props.toSortMenu; 
+        const sublevelToFilter = props.toSortMenu;
         return producto.sublevel_id === sublevelToFilter;
     });
     console.log(filterProducs)
     return (
 
         <div className={styles.productGrid}>
+            {/* migas de pan */}
+            <div className={styles.migasCont}>
+                <h1>
+                    Categoria: {props.toSortMenu}
+                </h1>
+            </div>
+
             {/* el map recibe los productos filtrados  */}
             {filterProducs?.map((product: any) => (
                 <Product

@@ -5,8 +5,14 @@ margin: 0;
 box-sizing: border-box;
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: flex-start;
 flex-wrap: wrap;
+}
+.migasCont{
+flex:100%;
+}
+.migasCont h1{
+  color: #fafafa;
 }
 @media screen and (max-width: 700px) {
     .productGrid {
