@@ -1,5 +1,7 @@
 .filterContainer{
     display: flex;
+    flex-direction: column;
+    color: #fafafa;
 }
 .filterContainer button{
     outline: none;
@@ -10,3 +12,9 @@
     cursor: pointer;
     text-transform:uppercase ;
 }
+.filterContainer .rangeImputs{
+    height: 2rem;
+    accent-color: #eee017;
+}
+
+/*  */

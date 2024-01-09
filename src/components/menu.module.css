@@ -13,16 +13,19 @@
     color: #e2e2e2;
     cursor: pointer;
 }
+
 .menu li a {
     text-decoration: none;
     color: #e2e2e2;
-    width: 100%;
-    padding: 10px 15px;
-
+    padding: 10px 90px 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-.open.menuLi >a{
+
+.open.menuLi>a {
     color: #ffffff;
 }
-.closed.menuLi ul{
-display: none;
+
+.closed.menuLi ul {
+    display: none;
 }

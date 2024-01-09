@@ -1,0 +1,30 @@
+.sortsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-around;
+}
+.title{
+width: 100%;
+}
+.sortsContainer button{
+    color: #fafafa;
+    cursor: pointer;
+    background: #35342f;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    transition: all 800ms;
+}
+.sortsContainer svg{
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-right:5px ;
+}
+.sortsContainer button:hover{
+    color: #eee017;
+    transition: all 800ms;
+}

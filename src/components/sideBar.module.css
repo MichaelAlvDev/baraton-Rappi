@@ -1,19 +1,22 @@
 .sideBar {
     padding: 10px;
     box-sizing: border-box;
-    background: rgb(64 64 64);
+    background: rgb(105 105 105);
     flex: 20%;
     transition: 600ms;
 }
+
 .sideBar h1 {
     color: #fafafa;
 }
+
 .hide {
     flex: 0;
     padding: 0;
     margin: 0;
     /* display: none; */
 }
+
 .hide>* {
     display: none;
     /* display: none; */
