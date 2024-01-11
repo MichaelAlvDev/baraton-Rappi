@@ -15,6 +15,7 @@ const Filter = (props: any) => {
                     type="number"
                     value={props.stCantidadEnStock}
                     onChange={props.fnFilterByCantidadEnStock}
+                    step={STEP}
                 />
             </span>
 
