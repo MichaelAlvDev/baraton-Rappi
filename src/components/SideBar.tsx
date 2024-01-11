@@ -15,7 +15,15 @@ const SideBar = (props: any) => {
         fnSortByCantidadEnStock={props.fnSortByCantidadEnStock}
         stSortCantidadEnStock={props.stSortCantidadEnStock}
       />
-      <Filter />
+      <Filter
+        fnFilterByDisponible={props.fnFilterByDisponible}
+        stFilterDisponible={props.stFilterDisponible}
+        fnFilterByCantidadEnStock={props.fnFilterByCantidadEnStock}
+        stCantidadEnStock={props.stCantidadEnStock}
+        fnFilterByPrecioMax={props.fnFilterByPrecioMax}
+        fnFilterByPrecioMin={props.fnFilterByPrecioMin}
+        stRangoPrecios={props.stRangoPrecios}
+      />
 
       <div><h1>Categorias</h1> </div>
       <Menu

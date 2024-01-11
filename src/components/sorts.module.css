@@ -20,7 +20,7 @@ width: 100%;
     transition: all 800ms;
 }
 .sortsContainer svg{
-    font-size: 1.4rem;
+    font-size: 0.8rem;
     cursor: pointer;
     margin-right:5px ;
 }

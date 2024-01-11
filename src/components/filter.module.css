@@ -1,20 +1,29 @@
-.filterContainer{
+.filterContainer {
     display: flex;
     flex-direction: column;
     color: #fafafa;
 }
-.filterContainer button{
+
+.filterContainer button {
     outline: none;
     background: none;
     margin: 5px;
     border: 1px solid #000;
     color: #fafafa;
     cursor: pointer;
-    text-transform:uppercase ;
+    text-transform: uppercase;
 }
-.filterContainer .rangeImputs{
+
+.filterContainer .rangeImputs {
     height: 2rem;
     accent-color: #eee017;
 }
 
-/*  */
+.filterContainer .NumberImputs {
+    width: 50px;
+    border: none;
+    background: #cac7c7;
+    outline: none;
+    margin-left: 5px ;
+    margin-right: 5px ;
+}
