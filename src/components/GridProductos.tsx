@@ -1,24 +1,35 @@
 import Product from './Product';
 import styles from './gridProductos.module.css';
 import productos from '../assets/products.json'
+import { extractNumericValue } from '../utils/utils';
 
 const GridProductos = (props: any) => {
 
     //Mapeo principal desde el Json
-    const Productos  = productos.products.map((producto ) => ({
+    const Productos = productos.products.map((producto) => ({
         quantity: producto.quantity,
-        price: producto.price,
+        price: extractNumericValue(producto.price),
         available: producto.available,
         sublevel_id: producto.sublevel_id,
         name: producto.name,
         id: producto.id,
     }));
-
     const filterProducs = Productos?.filter((producto) => {
         // Filtrar según el sublevel_id deseado
-        const sublevelToFilter = props.toSortMenu;
-        return producto.sublevel_id === sublevelToFilter;
+        // const sublevelToFilter = props.toSortMenu;
+        return producto.sublevel_id === props.toSortMenu;
     });
+    if (props.stSortCantidadEnStock) {
+        filterProducs.sort((a, b) => a.quantity - b.quantity);
+    }
+    if (props.stSortRangoPrecios) {
+        filterProducs.sort((a, b) => a.price - b.price);
+    }
+    if (props.stSortDisponible) {
+        filterProducs.sort((a, b) => (a.available === b.available) ? 0 : a.available ? -1 : 1);
+    }
+    
+    
     return (
 
         <div className={styles.productGrid}>

@@ -32,11 +32,11 @@ function App() {
     setCantidadEnStock(e.target.value);
   }
   function filterByPrecioMax(e: any): void { //Fix Tipo del Any aqui pls
-    setRangoPrecios({min:rangoPrecios.min,max: e.target.value});
+    setRangoPrecios({ min: rangoPrecios.min, max: e.target.value });
   }
   function filterByPrecioMin(e: any): void { //Fix Tipo del Any aqui pls
-    setRangoPrecios({min: e.target.value,max:rangoPrecios.max});
-  } 
+    setRangoPrecios({ min: e.target.value, max: rangoPrecios.max });
+  }
   /*Funciones para controlar el Estado del componente SORT*/
   function sortByDisponible(): void { //Maneja el estado Sort disponible
     setSortDisponible(!sortDisponible)
@@ -77,7 +77,15 @@ function App() {
         <GridProductos
           //state para seleccionar categoria
           toSortMenu={toSortMenu}
+          //states para filtrar
+          stFilterDisponible={disponible}
+          stCantidadEnStock={cantidadEnStock}
+          stRangoPrecios={rangoPrecios}
+          //states para ordenar
           stSortDisponible={sortDisponible}
+          stSortRangoPrecios={sortRangoPrecios}
+          stSortCantidadEnStock={sortCantidadEnStock}
+
         />
       </main>
     </>

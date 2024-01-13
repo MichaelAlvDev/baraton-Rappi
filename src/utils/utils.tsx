@@ -17,6 +17,12 @@ export function toggle_list(e: MouseEvent<HTMLAnchorElement>) {
         listTarget.classList.add(styles.open);
     }
 }
+export function extractNumericValue (priceString: string): number {
+    // Remover símbolo de dólar y comas
+    const numericString = priceString.replace(/[^\d.-]/g, '');
+    // Convertir a número
+    return parseFloat(numericString);
+};
 
 // Funciones para filtrar productos
 export function filtrarPorDisponibilidad(productos: Producto, disponible: boolean) {
