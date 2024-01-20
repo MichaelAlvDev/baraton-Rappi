@@ -9,8 +9,8 @@ function App() {
   const [toSortMenu, setToSortMenu] = useState<number>(1) //state para filtrar productos egun el nivel seleccionado del menu categorias
   // Estados para Filtrar (filter)
   const [disponible, setDisponible] = useState(false);
-  const [rangoPrecios, setRangoPrecios] = useState({ min: 0, max: 8000 });
-  const [cantidadEnStock, setCantidadEnStock] = useState(800);
+  const [rangoPrecios, setRangoPrecios] = useState({ min: 0, max: 16000 });
+  const [cantidadEnStock, setCantidadEnStock] = useState(0);
   // Estados para Ordenar (sort)
   const [sortDisponible, setSortDisponible] = useState(false);
   const [sortRangoPrecios, setsortRangoPrecios] = useState(false);

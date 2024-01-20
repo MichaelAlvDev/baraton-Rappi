@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import styles from "../components/menu.module.css"
-import { Producto } from "../types/types";
+import { Producto, Productos } from "../types/types";
 
 
 //Funcion para Mostrar y ocultar la barra lateral
@@ -25,27 +25,20 @@ export function extractNumericValue (priceString: string): number {
 };
 
 // Funciones para filtrar productos
-export function filtrarPorDisponibilidad(productos: Producto, disponible: boolean) {
+export function filtrarPorDisponibilidad(productos: Productos, disponible: boolean) {
     return productos.filter(producto => producto.available === disponible);
 };
 
-export function filtrarPorRangoDePrecios(productos: Producto, minPrice:number, maxPrice:number) {
+export function filtrarPorRangoDePrecios(productos: Productos, minPrice:number, maxPrice:number) {
     return productos.filter(producto => producto.price >= minPrice && producto.price <= maxPrice);
 };
 
-export function filtrarPorCantidadEnStock(productos: Producto, cantidad:number) {
+export function filtrarPorCantidadEnStock(productos: Productos, cantidad:number) {
     return productos.filter(producto => producto.quantity >= cantidad);
 };
 
-// Funciones para ordenar productos
-export function ordenarPorPrecio(productos: Producto, orden:string) {
-    return orden === 'asc' ? productos.sort((a, b) => a.price - b.price) : productos.sort((a, b) => b.price - a.price);
+export function  filtrarPoCategoria(productos : Productos, categoria:number){
+    return productos.filter(producto => producto.sublevel_id === categoria)
 };
 
-export function ordenarPorDisponibilidad(productos: Producto, orden:string) {
-    return orden === 'disponible' ? productos.filter(producto => producto.available) : productos.filter(producto => !producto.available);
-};
-
-export function ordenarPorCantidadEnStock(productos: Producto, orden:string) {
-    return orden === 'asc' ? productos.sort((a, b) => a.quantity - b.quantity) : productos.sort((a, b) => b.quantity - a.quantity);
-};
+  

@@ -2,7 +2,8 @@ import styles from './filter.module.css';
 
 const Filter = (props: any) => {
     const MIN = 0;
-    const MAX = 8000;
+    const MAX = 16000;
+    const MAXC = 900;
     const STEP = 50;
 
     return (
@@ -23,7 +24,7 @@ const Filter = (props: any) => {
                 type="range"
                 onChange={props.fnFilterByCantidadEnStock}
                 min={MIN}
-                max={MAX}
+                max={MAXC}
                 step={STEP}
                 value={props.stCantidadEnStock}
             />

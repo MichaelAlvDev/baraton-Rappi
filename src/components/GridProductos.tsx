@@ -1,7 +1,8 @@
 import Product from './Product';
 import styles from './gridProductos.module.css';
 import productos from '../assets/products.json'
-import { extractNumericValue } from '../utils/utils';
+import { extractNumericValue, filtrarPoCategoria, filtrarPorCantidadEnStock, filtrarPorDisponibilidad, filtrarPorRangoDePrecios } from '../utils/utils';
+import { Producto, Productos } from '../types/types';
 
 const GridProductos = (props: any) => {
 
@@ -14,22 +15,31 @@ const GridProductos = (props: any) => {
         name: producto.name,
         id: producto.id,
     }));
-    const filterProducs = Productos?.filter((producto) => {
-        // Filtrar según el sublevel_id deseado
-        // const sublevelToFilter = props.toSortMenu;
-        return producto.sublevel_id === props.toSortMenu;
-    });
+    const filtrarProductos = (productosAFiltrar: Productos) => {
+        let productosFiltrados = productosAFiltrar; // lista original de productos
+        // Aplicar filtros según el estado actual
+        if (props.stFilterDisponible) {
+            productosFiltrados = filtrarPorDisponibilidad(productosFiltrados, true);
+        }
+        productosFiltrados = filtrarPorRangoDePrecios(productosFiltrados, props.stRangoPrecios.min, props.stRangoPrecios.max);
+        productosFiltrados = filtrarPorCantidadEnStock(productosFiltrados, props.stCantidadEnStock);
+        productosFiltrados = filtrarPoCategoria(productosFiltrados, props.toSortMenu);
+        return productosFiltrados;
+    };
+    const filterProducs = filtrarProductos(Productos)
+
+
     if (props.stSortCantidadEnStock) {
-        filterProducs.sort((a, b) => a.quantity - b.quantity);
+        filterProducs.sort((a: Producto, b: Producto) => a.quantity - b.quantity);
     }
     if (props.stSortRangoPrecios) {
-        filterProducs.sort((a, b) => a.price - b.price);
+        filterProducs.sort((a: Producto, b: Producto) => a.price - b.price);
     }
     if (props.stSortDisponible) {
-        filterProducs.sort((a, b) => (a.available === b.available) ? 0 : a.available ? -1 : 1);
+        filterProducs.sort((a: Producto, b: Producto) => (a.available === b.available) ? 0 : a.available ? -1 : 1);
     }
-    
-    
+
+
     return (
 
         <div className={styles.productGrid}>
