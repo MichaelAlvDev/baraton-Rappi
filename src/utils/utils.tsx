@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import styles from "../components/menu.module.css"
-import { Producto, Productos } from "../types/types";
+import {  Productos } from "../types/types";
 
 
 //Funcion para Mostrar y ocultar la barra lateral
