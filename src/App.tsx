@@ -28,14 +28,17 @@ function App() {
   function filterByDisponible(e: ChangeEvent<HTMLInputElement>): void {
     setDisponible(e.target.checked);
   }
-  function filterByCantidadEnStock(e: any): void { //Fix Tipo del Any aqui pls
-    setCantidadEnStock(e.target.value);
+  function filterByCantidadEnStock(e: ChangeEvent<HTMLInputElement>): void { 
+    const cantidad = Number(e.target.value)
+    setCantidadEnStock(cantidad);
   }
-  function filterByPrecioMax(e: any): void { //Fix Tipo del Any aqui pls
-    setRangoPrecios({ min: rangoPrecios.min, max: e.target.value });
+  function filterByPrecioMax(e: ChangeEvent<HTMLInputElement>): void { 
+    const cantMax = Number(e.target.value)
+    setRangoPrecios({ min: rangoPrecios.min, max: cantMax });
   }
-  function filterByPrecioMin(e: any): void { //Fix Tipo del Any aqui pls
-    setRangoPrecios({ min: e.target.value, max: rangoPrecios.max });
+  function filterByPrecioMin(e: ChangeEvent<HTMLInputElement>): void { 
+    const cantMin = Number(e.target.value)
+    setRangoPrecios({ min: cantMin, max: rangoPrecios.max });
   }
   /*Funciones para controlar el Estado del componente SORT*/
   function sortByDisponible(): void { //Maneja el estado Sort disponible

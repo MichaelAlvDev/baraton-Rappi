@@ -52,7 +52,7 @@ const GridProductos = (props: any) => {
             </div>
 
             {/* el map recibe los productos filtrados  */}
-            {filterProducs?.map((product: any) => (
+            {filterProducs?.map((product: Producto) => (
                 <Product
                     key={product.id}
                     productQuantity={product.quantity}
